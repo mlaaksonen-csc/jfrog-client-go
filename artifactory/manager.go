@@ -84,7 +84,7 @@ func (sm *ArtifactoryServicesManagerImp) DeleteRepository(repoKey string) error 
 	return deleteRepositoryService.Delete(repoKey)
 }
 
-func (sm *ArtifactoryServicesManagerImp) GetRepository(repoKey string) (*services.RepositoryDetails, error) {
+func (sm *ArtifactoryServicesManagerImp) GetRepository(repoKey string) (*services.AllRepositoryDetails, error) {
 	getRepositoryService := services.NewGetRepositoryService(sm.client)
 	getRepositoryService.ArtDetails = sm.config.GetServiceDetails()
 	return getRepositoryService.Get(repoKey)
