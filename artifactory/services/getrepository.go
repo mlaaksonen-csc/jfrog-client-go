@@ -23,7 +23,7 @@ func NewGetRepositoryService(client *jfroghttpclient.JfrogHttpClient) *GetReposi
 	return &GetRepositoryService{client: client}
 }
 
-func (grs *GetRepositoryService) Get(repoKey string) (*RepositoryDetails, error) {
+func (grs *GetRepositoryService) Get(repoKey string) (*AllRepositoryDetails, error) {
 	log.Info("Getting repository '" + repoKey + "' details ...")
 	body, err := grs.sendGet(apiRepositories + "/" + repoKey)
 	if err != nil {
