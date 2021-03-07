@@ -66,6 +66,7 @@ func (grs *GetRepositoryService) sendGet(api string) ([]byte, error) {
 type RepositoryDetails struct {
 	Key         string
 	Rclass      string
+	Type        string
 	Description string
 	Url         string
 	PackageType string
